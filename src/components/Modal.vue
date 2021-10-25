@@ -1,6 +1,7 @@
 <template>
 <div class="backdrop">
 <div class="modal">
+  <h1>Modal Title</h1>
   <p>modal content</p>
 </div>
 </div>
@@ -17,7 +18,7 @@ export default {
   width: 400px;
   padding: 20px;
   margin: 100px auto;
-  background: aliceblue;
+  background: white;
   border-radius: 20px;
 
 }
@@ -27,5 +28,11 @@ export default {
   background: aquamarine;
   width: 100%;
   height: 100%;
+}
+h1{
+  color: green;
+}
+.modal p {
+  font-style: normal;
 }
 </style>
