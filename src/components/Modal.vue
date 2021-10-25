@@ -1,5 +1,5 @@
 <template>
-<div class="backdrop" v-on:click="closeModal">
+<div class="backdrop" v-on:click.self="closeModal">
 <!--  dynamic class :class-->
 <div class="modal" :class="{sale : theme === 'sale'}">
   <h1>{{ header }}</h1>
