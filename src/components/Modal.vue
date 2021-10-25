@@ -1,27 +1,29 @@
 <template>
-<div class="backdrop" v-on:click.self="closeModal">
-<!--  dynamic class :class-->
-<div class="modal" :class="{sale : theme === 'sale'}">
-  <h1>{{ header }}</h1>
-  <p>{{text}}}</p>
-</div>
-</div>
+  <div class="backdrop" v-on:click.self="closeModal">
+    <!--  dynamic class :class-->
+    <div class="modal" :class="{sale : theme === 'sale'}">
+      <slot></slot>
+      <div class="actions">
+        <slot>default content</slot>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
 export default {
-  props: ['header', 'text', 'theme'],
+  props: ["theme"],
   methods: {
     closeModal() {
       //emit event from parent cpmponent, name of event is up to me
-      this.$emit('close')
+      this.$emit("close");
     }
   }
 };
 </script>
 
 <style scoped>
-.modal{
+.modal {
   width: 400px;
   padding: 20px;
   margin: 100px auto;
@@ -29,16 +31,19 @@ export default {
   border-radius: 20px;
 
 }
-.backdrop{
+
+.backdrop {
   top: 0;
   position: fixed;
   background: aquamarine;
   width: 100%;
   height: 100%;
 }
-h1{
+
+h1 {
   color: green;
 }
+
 .modal p {
   font-style: normal;
 }
@@ -47,7 +52,8 @@ h1{
   background: blueviolet;
   color: white;
 }
-.modal.sale h1{
+
+.modal.sale h1 {
   color: white;
 }
 </style>
