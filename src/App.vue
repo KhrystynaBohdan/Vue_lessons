@@ -1,6 +1,6 @@
 <template>
   <h1> {{ title }}</h1>
-  <Modal />
+  <Modal :header="header" :text="text" theme="sale"/>
 </template>
 
 <script>
@@ -10,7 +10,9 @@ export default {
   components: { Modal },
   data () {
     return{
-      title: 'my first vue app'
+      title: 'my first vue app',
+      header: "hello cococ",
+      text: 'forest club',
     }
   },
 };
@@ -28,4 +30,5 @@ export default {
 h1{
   color: red;
 }
+
 </style>
