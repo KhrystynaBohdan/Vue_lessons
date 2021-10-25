@@ -1,7 +1,7 @@
 <template>
   <h1> {{ title }}</h1>
   <p>Welcome...</p>
-  <div v-if="showModal">
+  <teleport to=".modals" v-if="showModal">
     <Modal theme="sale" v-on:click="toggleModal">
       <slot>
         <template>
@@ -12,15 +12,15 @@
         <p>coco</p>
       </slot>
     </Modal>
-  </div>
-  <div v-if="showModalTwo">
+  </teleport>
+  <teleport to=".modals" v-if="showModalTwo">
     <Modal v-on:click="toggleModalTwo">
       <slot>
         <h1>welcome2</h1>
         <p>coco2</p>
       </slot>
     </Modal>
-  </div>
+  </teleport>
   <button v-on:click.alt="toggleModal">open modal(alt)</button>
   <button v-on:click.shift="toggleModalTwo">different modal</button>
 </template>
@@ -49,7 +49,7 @@ export default {
 </script>
 
 <style>
-#app {
+#app, .modals {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
