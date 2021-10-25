@@ -1,5 +1,5 @@
 <template>
-<div class="backdrop">
+<div class="backdrop" v-on:click="closeModal">
 <!--  dynamic class :class-->
 <div class="modal" :class="{sale : theme === 'sale'}">
   <h1>{{ header }}</h1>
@@ -11,6 +11,12 @@
 <script>
 export default {
   props: ['header', 'text', 'theme'],
+  methods: {
+    closeModal() {
+      //emit event from parent cpmponent, name of event is up to me
+      this.$emit('close')
+    }
+  }
 };
 </script>
 
